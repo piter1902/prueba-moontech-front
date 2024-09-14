@@ -14,7 +14,7 @@ import { User } from '../../models/user.model';
   styleUrl: './list-users.component.scss',
 })
 export class ListUsersComponent implements OnInit, OnDestroy {
-  subs: SubSink = new SubSink();
+  private subs: SubSink = new SubSink();
 
   cols: TableColumn[] = [
     { field: 'name', header: 'Nombre de usuario' },

@@ -13,6 +13,13 @@ const routes: Routes = [
       import('./users/users-routing.module').then((m) => m.UsersRoutingModule),
   },
   {
+    path: 'connections',
+    loadChildren: () =>
+      import('./connections/connections-routing.module').then(
+        (m) => m.ConnectionsRoutingModule
+      ),
+  },
+  {
     path: '**',
     redirectTo: '/users/list',
   },
