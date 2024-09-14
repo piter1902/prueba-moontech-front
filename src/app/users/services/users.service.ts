@@ -63,4 +63,12 @@ export class UsersService {
 
     return req$;
   }
+
+  getCurrentUser(): Observable<User> {
+    const url = this.getUrl('me');
+
+    const req$ = this.http.get<User>(url);
+
+    return req$;
+  }
 }

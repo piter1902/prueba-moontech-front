@@ -1,0 +1,12 @@
+<p-menubar [model]="navigationItems">
+  <ng-template pTemplate="end">
+    <div class="flex flex-row align-items-center gap-2">
+      <p>{{username}}</p>
+      <p-button [text]="true" label="Cerrar sesión" (onClick)="logout()"></p-button>
+    </div>
+  </ng-template>
+
+</p-menubar>
+<div class="p-8">
+  <router-outlet />
+</div>

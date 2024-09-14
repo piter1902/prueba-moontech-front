@@ -12,9 +12,10 @@ import { TokenInterceptor } from './shared/interceptors/token.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthModule } from './auth/auth.module';
 import { ConnectionsModule } from './connections/connections.module';
+import { LayoutComponent } from './layout.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, LayoutComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

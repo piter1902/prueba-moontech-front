@@ -14,7 +14,7 @@ import { ToastService } from '../services/toast.service';
 export class TokenInterceptor implements HttpInterceptor {
   constructor(
     private readonly router: Router,
-    private toastService: ToastService
+    private readonly toastService: ToastService
   ) {}
 
   intercept(
@@ -40,8 +40,8 @@ export class TokenInterceptor implements HttpInterceptor {
         );
 
         if (err.status === 401) {
-          // TODO: logout
-          //this.authService.logout();
+          // Remove token from localstorage
+          localStorage.removeItem(constants.localStorage.tokenKey);
           this.router.navigate(['auth', 'login']);
         }
 
