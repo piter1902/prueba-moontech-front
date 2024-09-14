@@ -1,6 +1,8 @@
 export const constants = Object.freeze({
     localStorage: {
-        tokenKey: "token"
+        tokenKey: "token",
+        rememberEmailKey: "rememberEmail",
+        rememberMeKey: "rememberMe"
     },
     toastDuration: 5000
 })
