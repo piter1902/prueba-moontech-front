@@ -1,0 +1,6 @@
+<div>
+    <div class="flex justify-content-end mb-3">
+        <p-button label="Añadir usuario" icon="pi pi-plus" outlined="true" (onClick)="onCreateUser()"></p-button>
+    </div>
+    <app-table [columns]="cols" [rows]="rows" (onRowClicked)="openDetail($event)"></app-table>
+</div>

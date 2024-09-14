@@ -1,0 +1,40 @@
+<div class="flex align-items-center justify-content-center" *ngIf="userFormGroup">
+    <div class="user-detail__container" [style]="{ width: '400px' }">
+        <div class="user-detail__container__header">
+            <p class="user-detail__container__header__title">Detalle de usuario</p>
+        </div>
+        <div class="flex justify-content-between mb-3">
+            <p-button icon="pi pi-angle-left" [outlined]="true" (onClick)="onBack()" />
+            <p-button icon="pi pi-trash" [outlined]="true" severity="danger" (onClick)="onDelete()" *ngIf="!isNew" />
+        </div>
+        <p-divider/>
+        <!-- Form -->
+        <form [formGroup]="userFormGroup" class="flex flex-column gap-4 align-items-center justify-content-center mt-5 mb-5">
+            <div class="card flex justify-content-center">
+                <p-floatLabel>
+                    <input pInputText id="name" formControlName="name" />
+                    <label for="name">Nombre de usuario</label>
+                </p-floatLabel>
+            </div>
+            <div class="card flex justify-content-center">
+                <p-floatLabel>
+                    <input pInputText id="email" formControlName="email" />
+                    <label for="email">Email</label>
+                </p-floatLabel>
+            </div>
+            <p-floatLabel>
+                <p-password [feedback]="false" formControlName="password" />
+                <label for="password">Contraseña</label>
+            </p-floatLabel>
+            <p-toggleButton formControlName="active" onLabel="Activo" offLabel="Inactivo" *ngIf="!isNew"/>
+        </form>
+        <p-divider />
+        <div class="user-detail__container__footer">
+            <!-- Save button -->
+            <div class="flex flex-column align-items-center">
+                <p-button label="Guardar" icon="pi pi-save" styleClass="w-full" (onClick)="onSave()" />
+            </div>
+        </div>
+    </div>
+</div>
+<p-confirmDialog />
